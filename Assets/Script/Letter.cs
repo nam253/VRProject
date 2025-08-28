@@ -30,6 +30,11 @@ public class Letter : MonoBehaviour
         {
             LetterCanvas.SetActive(true);
         }
+
+        if (interactable != null)
+        {
+            interactable.enabled = false;
+        }
     }
 
 }

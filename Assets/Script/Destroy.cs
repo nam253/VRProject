@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public class Close : MonoBehaviour
+public class Destroy : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public GameObject letterCanvas;
 
-    public void CloseButtone()
+    public void DestroyButtone()
     {
         if(letterCanvas != null)
         {
-            letterCanvas.SetActive(false);
+            Destroy(letterCanvas );
         }
     }
 }

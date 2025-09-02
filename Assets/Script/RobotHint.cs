@@ -5,16 +5,16 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 public class RobotHint : MonoBehaviour
 {
     private XRSimpleInteractable interactable;
-    public GameObject thirdHint;
+    public GameObject ThirdHint;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         interactable = GetComponent<XRSimpleInteractable>();
 
-        if (thirdHint != null)
+        if (ThirdHint != null)
         {
-            thirdHint.SetActive(false);
+            ThirdHint.SetActive(false);
         }
         if (interactable != null)
         {
@@ -26,15 +26,15 @@ public class RobotHint : MonoBehaviour
 
     public void OnSelectEntereds(SelectEnterEventArgs args)
     {
-        if (thirdHint != null)
+        if (ThirdHint != null)
         {
-            thirdHint.SetActive(true);
+            ThirdHint.SetActive(true);
         }
 
     }
 
     public void CloseThirdHint()
     {
-        thirdHint.SetActive(false);
+        ThirdHint.SetActive(false);
     }
 }

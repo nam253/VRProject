@@ -2,6 +2,7 @@ using SojaExiles;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class KeypadManager : MonoBehaviour
 {
@@ -12,6 +13,19 @@ public class KeypadManager : MonoBehaviour
 
     private string currentInput = "";
     private bool IsOpen = false;
+
+    public GameManager gameManager;
+    public GameObject GameClearCanvas;
+
+    void Start()
+    {
+       
+        if(GameClearCanvas != null)
+        {
+            GameClearCanvas.SetActive(false);
+        }
+
+    }
 
     public void RefreshScreen()
     {
@@ -55,6 +69,16 @@ public class KeypadManager : MonoBehaviour
             doorAnimator.SetBool("IsOpen", true);
             IsOpen = true;
             Invoke("CloseDoor", doorStayOpenTime);
+        }
+
+        if(GameClearCanvas != null)
+        {
+            GameClearCanvas.SetActive(true);
+        }
+
+        if(gameManager != null)
+        {
+            gameManager.timeIsRunning = false;
         }
     }
 

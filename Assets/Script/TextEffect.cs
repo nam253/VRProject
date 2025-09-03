@@ -13,6 +13,10 @@ public class TextEffect : MonoBehaviour
     public float letterDelay = 1.0f;
 
     public float sceneTransitionDelay = 1.0f;
+
+    public AudioSource audioSource;
+
+    public AudioClip textClip;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,6 +31,9 @@ public class TextEffect : MonoBehaviour
         for (int i = 0; i < fullText.Length; i++)
         {
             Storytext.text += fullText[i];
+
+            audioSource.PlayOneShot(textClip);
+
             yield return new WaitForSeconds(letterDelay);
         }
 

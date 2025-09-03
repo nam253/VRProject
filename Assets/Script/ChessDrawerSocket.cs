@@ -8,6 +8,8 @@ public class ChessDrawerSocket : MonoBehaviour
 
     private bool isObjectInSocket = false;
 
+    public AudioSource AudioSource;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,6 +23,10 @@ public class ChessDrawerSocket : MonoBehaviour
                 if (ChessDrawerAnimator != null)
                 {
                     ChessDrawerAnimator.SetBool(animatorParameterName, true);
+                }
+                if(AudioSource != null)
+                {
+                    AudioSource.Play();
                 }
             }
         }

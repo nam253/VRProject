@@ -7,6 +7,7 @@ public class LastDrawerSocket : MonoBehaviour
     public string animatorParameterName = "LastIsOpen";
 
     private bool isObjectInSocket = false;
+    public AudioSource audioSource;
 
 
     private void OnTriggerEnter(Collider other)
@@ -21,6 +22,10 @@ public class LastDrawerSocket : MonoBehaviour
                 if (drawerAnimator != null)
                 {
                     drawerAnimator.SetBool(animatorParameterName, true);
+                }
+                if(audioSource != null)
+                {
+                    audioSource.Play();
                 }
             }
         }

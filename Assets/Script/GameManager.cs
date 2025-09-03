@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public bool timeIsRunning = false;
 
     public KeypadManager keypadManager;
+
+    public AudioSource BackroundSource;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -47,6 +49,10 @@ public class GameManager : MonoBehaviour
                 if(GameOverCanvas != null)
                 {
                     GameOverCanvas.SetActive(true);
+                }
+                if(BackroundSource != null)
+                {
+                    BackroundSource.Stop();
                 }
             }
         }

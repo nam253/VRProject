@@ -5,6 +5,7 @@ public class DrawerSocket : MonoBehaviour
     public Animator drawerAnimator;
     public string targetObjectName = "Wine";
     public string animatorParameterName = "IsOpenDrawer";
+    public AudioSource AudioSource;
 
     private bool isObjectInSocket = false;
 
@@ -21,6 +22,10 @@ public class DrawerSocket : MonoBehaviour
                 if(drawerAnimator != null)
                 {
                     drawerAnimator.SetBool(animatorParameterName, true);
+                }
+                if(AudioSource != null)
+                {
+                    AudioSource.Play();
                 }
             }
         }

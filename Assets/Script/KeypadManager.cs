@@ -17,8 +17,12 @@ public class KeypadManager : MonoBehaviour
     public GameManager gameManager;
     public GameObject GameClearCanvas;
 
+    public AudioSource DooraudioSource;
+    public AudioSource BackgroundSource;
+
     void Start()
     {
+        if(BackgroundSource != null) BackgroundSource.Play();
        
         if(GameClearCanvas != null)
         {
@@ -70,10 +74,18 @@ public class KeypadManager : MonoBehaviour
             IsOpen = true;
             Invoke("CloseDoor", doorStayOpenTime);
         }
+        if (DooraudioSource != null)
+        {
+            DooraudioSource.Play();
+        }
 
-        if(GameClearCanvas != null)
+        if (GameClearCanvas != null)
         {
             GameClearCanvas.SetActive(true);
+        }
+        if(BackgroundSource != null)
+        {
+            BackgroundSource.Stop();
         }
 
         if(gameManager != null)
